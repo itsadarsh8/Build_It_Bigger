@@ -8,12 +8,6 @@ import android.view.ViewGroup;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-
-//import com.google.android.gms.ads.AdRequest;
-//import com.google.android.gms.ads.AdView;
 
 
 /**
@@ -30,12 +24,6 @@ public class MainActivityFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
         final AdView mAdView =root.findViewById(R.id.adView);
-        MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-
-            }
-        });
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 

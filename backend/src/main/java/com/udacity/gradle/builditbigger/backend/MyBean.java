@@ -1,15 +1,19 @@
 package com.udacity.gradle.builditbigger.backend;
 
+import com.example.jokefactory.JokeFactory;
+
 /** The object model for the data we are sending through endpoints */
+
 public class MyBean {
 
-    private String myData;
+    private JokeFactory mJokeFactory;
 
-    public String getData() {
-        return myData;
+    public MyBean() {
+        mJokeFactory=new JokeFactory();
+
+    }
+    public String getJoke(){
+        return mJokeFactory.getJoke();
     }
 
-    public void setData(String data) {
-        myData = data;
-    }
 }
